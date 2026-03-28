@@ -1,0 +1,14 @@
+/*крутящийся круг*/
+@keyframes rotateCircle {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+.circle-text {
+  transform: translate(-50%, -50%);
+  animation: rotateCircle 24s linear infinite;
+  transform-origin: center center;
+}

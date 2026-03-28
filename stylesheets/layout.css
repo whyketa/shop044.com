@@ -1,0 +1,133 @@
+html {
+  scroll-behavior: smooth;
+}
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: grayscale;
+  background-color: #363636;
+  overflow-x: hidden;
+}
+h1 {
+  font-family: "Helmswald";
+  font-size: 12.03125vw;
+  color: #000000;
+}
+h2 {
+  font-family: "Inter";
+  font-size: 2.08vw;
+  color: #000000;
+  font-weight: 700;
+}
+
+/*первый экран*/
+.screen_1 {
+  min-height: 100vh;
+  display: flex;
+  height: 100%;
+  gap: 0;
+  overflow: hidden;
+  background-image: url("../images/pattern_1.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  justify-content: center; /* по горизонтали */
+  align-items: center;
+  position: relative;
+}
+.text-background {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 44.32vw;
+  height: 17.75vw;
+  background-image: url("../images/logo_back.svg");
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding-top: 2vw;
+  transform: translateY(-7vw);
+}
+.circle-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 90vw;
+  height: 90vw;
+  aspect-ratio: 1 / 1;
+  z-index: 1;
+}
+
+.circle-text img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* кнопка */
+.shop-btn {
+  padding: 12px 28px;
+  background: #70d6d8;
+  border: 2vw;
+  border-radius: 2vw;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.shop-btn h2 {
+  color: #ffffff;
+}
+
+.shop-btn:hover {
+  transform: scale(1.05);
+  background: #5fc4d6;
+}
+
+/* затемнение фона */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+/* активное состояние */
+.modal.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* окно */
+.modal-content {
+  background: #1f1f1f;
+  padding: 30px;
+  border-radius: 20px;
+  width: 400px;
+  max-width: 90%;
+
+  transform: scale(0.8);
+  transition: transform 0.3s ease;
+}
+
+/* анимация появления */
+.modal.active .modal-content {
+  transform: scale(1);
+}
+
+/* крестик */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 24px;
+  cursor: pointer;
+}
